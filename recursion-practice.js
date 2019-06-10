@@ -54,3 +54,33 @@ function nThTri(n) {
 }
 
 nThTri(5)
+
+//String Splitter
+function strSplit(str, splitter){
+  if(str.length === 0){
+    return '';
+  }
+
+  const currentChar = str[0] === splitter  ? '' : str[0]; 
+
+  const newStr = currentChar + strSplit(str.slice(1), splitter);
+  console.log(newStr);
+  return newStr;
+}
+
+strSplit('01/2/3//45/6/', '/') //should return 0123456
+
+function fibonacci(num){
+  if(num <= 0){
+    return 0;
+  }
+  if(num === 1){
+    return 1;
+  }
+
+  const fibSequence = fibonacci(num-1) + fibonacci(num -2);
+  console.log(fibSequence);
+  return fibSequence;
+}
+
+fibonacci(7); // 1,1,2,3,5,8,13
