@@ -87,6 +87,13 @@ function fibonacci(num) {
   const last = fibonacci(num - 1)
 
   return [...last, last[last.length - 1] + last[last.length - 2]]
+
+  if(num < 2) return num
+
+  
+
+  // const sum = fibonacci(num-2) + fibonacci(num-1)
+  // console.log sum
 }
 
 fibonacci(7) // 1,1,2,3,5,8,13
@@ -114,8 +121,8 @@ getFactorial(5)
 // Find a way out of the maze
 let mySmallMaze = [
   [' ', ' ', ' '],   //currX = 1 , currY = 0, maze[0].length = 3
-  ['e', '*', ' '],
-  [' ', ' ', ' ']
+  [' ', '*', ' '],
+  [' ', ' ', 'e']
 ]
 
 let maze = [
@@ -151,4 +158,4 @@ function findWayOut(maze, currY, currX, lastMove) {
   return move + findWayOut(maze, posY, posX, move);
 }
 
-console.log(findWayOut(mySmallMaze, 0, 0))
+console.log(findWayOut(maze, 0, 0))
